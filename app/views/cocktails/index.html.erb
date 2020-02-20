@@ -1,0 +1,21 @@
+
+<h1>Cocktails</h1>
+
+<ul class="cocktail-list">
+  <% @cocktails.each do |cocktail| %>
+  <li><i class="fas fa-cocktail"></i> <%= link_to "#{cocktail.name}", cocktail_path(cocktail.id) %>
+     <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
+      <i class="fas fa-trash-alt"></i>
+    <% end %>
+  </li>
+  <% end %>
+</ul>
+
+
+
+
+
+<%= link_to 'add', new_cocktail_path, {class: "btn btn-primary"} %>
+
+
+
