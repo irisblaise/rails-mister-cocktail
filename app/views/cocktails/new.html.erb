@@ -1,10 +1,15 @@
-<h1>Add your own cocktail</h1>
+ <div class="container">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <h1>Add your own cocktail</h1>
 
-<%= simple_form_for(@cocktail) do |f| %>
-  <div class="form-group">
-    <%= f.input :name %>
-    <%= f.button :submit, {class: "btn btn-primary"}%>
+        <%= simple_form_for(@cocktail) do |f| %>
+          <div class="form-group">
+          <%= f.input :name %>
+          <%= f.input :created_by %>
+          <%= f.button :submit, {class: "btn btn-primary"}%>
+          </div>
+        <% end %>
+    </div>
   </div>
-<% end %>
-
-</iv>
+</div>

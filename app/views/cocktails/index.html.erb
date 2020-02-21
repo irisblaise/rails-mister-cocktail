@@ -1,21 +1,22 @@
+ <div class="banner">
+  <div class="container">
+    <h1>Shaken by... </h1>
+    <p>Unique cocktails by your favourite shaker</p>
+  </div>
+</div>
 
-<h1>Cocktails</h1>
-
-<ul class="cocktail-list">
-  <% @cocktails.each do |cocktail| %>
-  <li><i class="fas fa-cocktail"></i> <%= link_to "#{cocktail.name}", cocktail_path(cocktail.id) %>
-     <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
-      <i class="fas fa-trash-alt"></i>
+<div class="container">
+  <div class="cocktail-grid">
+    <% @cocktails.each do |cocktail| %>
+      <div class="cocktail-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/600x800);">
+        <h3><%= link_to "#{cocktail.name}", cocktail_path(cocktail.id) %></h3>
+        <p class='shaken_by'> Shaken by: <%=cocktail.created_by%></p>
+        <%= link_to cocktail_path(cocktail), class: 'cocktail-delete', method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
     <% end %>
-  </li>
-  <% end %>
-</ul>
-
-
-
-
-
-<%= link_to 'add', new_cocktail_path, {class: "btn btn-primary"} %>
-
+  </div>
+</div>
 
 

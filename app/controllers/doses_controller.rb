@@ -19,7 +19,7 @@ class DosesController < ApplicationController
     @dose = Dose.find(params[:id])
     @dose.update(dose_params)
     @dose.save
-    redirect_to cocktails_path
+    redirect_to cocktail_path(@cocktail)
   end
 
   def destroy

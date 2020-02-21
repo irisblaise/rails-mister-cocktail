@@ -1,3 +1,7 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 offset-3">
+
 <h1><%= @cocktail.name%></h1>
 
 <h2>ingredients</h2>
@@ -19,7 +23,7 @@
 <h4>Add a ingrdient</h4>
 <%= simple_form_for [@cocktail, @dose] do |f| %>
   <div class="form-group">
-     <%= f.association :ingredient%>
+     <%= f.association :ingredient, input_html: { class:"select2" }%>
     <%= f.input :description %>
     <%= f.button :submit, {class: "btn btn-primary"}%>
   </div>
@@ -29,3 +33,6 @@
 <%= link_to "update your cocktail",  edit_cocktail_path, {class: "btn btn-primary"} %>
 
 
+       </div>
+   </div>
+</div>
